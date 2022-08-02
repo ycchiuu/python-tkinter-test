@@ -1,8 +1,8 @@
 """
-tk win prac
+MIT license: Chiu
 """
-class labelComputer(object):
-    comType='sf5'
+class labelComputer(object):    # 建一個 class
+    comType='sf5'               # property
     comSoftware='win 10'
     comMemory='16GB'
     comDisk='512GB'
@@ -41,22 +41,19 @@ win.wm_title('電腦庫存2')                   # 視窗標題
 #win.iconbitmap("favicon.ico")
 win.geometry('400x400')
 win.configure(bg='#99e958')
-
+### set menu
 menubar = tk.Menu(win)                              #第一層的下拉選單
 filemenu = tk.Menu(menubar, tearoff=False)            #第二層file 中的選單
 filemenu.add_command(label="Open",command=onOpen)   # 當選取 Open 時，呼叫 onOpen() 函數
 filemenu.add_command(label="Save",command=onSave)
 menubar.add_cascade(label="File", menu=filemenu)
-
 filemenu = tk.Menu(menubar)
 filemenu = tk.Menu(menubar, tearoff=False)
 filemenu.add_command(label="Website")
 menubar.add_cascade(label="Help", menu=filemenu)
-
 menubar.add_command(label='Exit', command=win.destroy)    # 離開
-
 win.config(menu=menubar)
-
+### 呼叫 class
 x=labelComputer(ty='sf514',sw='win 10',mem=16,disk=512,wei=1050,bl=10,wh=8,red=5,gr=5,price=25000)
 
 label1=tk.Label(win,text='型號: '+str(x.comType))
